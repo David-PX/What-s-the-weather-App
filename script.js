@@ -1,10 +1,20 @@
 $(document).ready(function () {
+         var typed = new Typed('.typed', {
+        strings: ['Hello', 'You can find the weather on any place '],
+        smartBackspace: true,
+        loop: true,
+        typeSpeed:100,
+        });
+
+
     
     $("#searchInput").on("keyup" , function(e){
         var cityName = e.target.value;
         const APIKey = '23336f6b757bbf1495f74aaf865d06ff';
 
         // make a request to the server
+       
+
 
         $.ajax({
             url: "http://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid="+APIKey +"&units=metric",
